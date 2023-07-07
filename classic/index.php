@@ -892,48 +892,48 @@
 									<div class="tab-pane active" id="tabid1" role="tabpanel">
 										<h4 class="box-title mb-15">Currency</h4>
 										<div class="row bb-1 pb-15 mb-15">
-											<div class="col-xl-4 col-md-4 col-12">
+											<div class="col-xl-3 col-md-3 col-12">
 												<div class="sel-coin-type-outer">
 													<input type="radio" name="coin-type" id="sell-1" checked="">
 													<label for="sell-1" class="sel-coin-type">
 														<i class="cc BTC mr-0"></i> 
 														<p class="mb-5">Bitcoin</p>
 														<small>@</small>
-														<p class="mb-0"><small>8670.07</small></p>
+														<p class="mb-0"><small>1USD</small></p>
 													</label>
 												</div>
 											</div>
-											<div class="col-xl-4 col-md-4 col-12">
+											<div class="col-xl-3 col-md-3 col-12">
 												<div class="sel-coin-type-outer">
 													<input type="radio" name="coin-type" id="sell-2">
 													<label for="sell-2" class="sel-coin-type">
 														<i class="cc ETH mr-0"></i> 
 														<p class="mb-5">Ethereum</p>
 														<small>@</small>
-														<p class="mb-0"><small>8670.07</small></p>
+														<p class="mb-0"><small>1USD</small></p>
 													</label>
 												</div>
 											</div>
 
-											<div class="col-xl-4 col-md-4 col-12">
+											<div class="col-xl-3 col-md-3 col-12">
 												<div class="sel-coin-type-outer">
 													<input type="radio" name="coin-type" id="sell-3">
 													<label for="sell-3" class="sel-coin-type">
 														<i class="cc ETH mr-0"></i> 
 														<p class="mb-5">Ethereum</p>
 														<small>@</small>
-														<p class="mb-0"><small>8670.07</small></p>
+														<p class="mb-0"><small>1USD</small></p>
 													</label>
 												</div>
 											</div>
-											<div class="col-xl-4 col-md-4 col-12">
+											<div class="col-xl-3 col-md-3 col-12">
 												<div class="sel-coin-type-outer">
 													<input type="radio" name="coin-type" id="sell-4">
 													<label for="sell-4" class="sel-coin-type">
 														<i class="cc LTC mr-0"></i> 
 														<p class="mb-5">Lite</p>
 														<small>@</small>
-														<p class="mb-0"><small>8670.07</small></p>
+														<p class="mb-0"><small>1USD</small></p>
 													</label>
 												</div>
 											</div>
@@ -946,16 +946,24 @@
 											<div class="col-12">
 												<div class="buy-input-block-content row">
 													<div class="buy-input-box col-md-5">
-														<div class="form-group">
+														<!-- <div class="form-group">
 															<input type="text" class="form-control" placeholder="899 USD" name="">
+														</div> -->
+														<div class="input-group mb-50">
+															<span class="input-group-addon">USD</span>
+															<input type="text" class="form-control" placeholder="">
 														</div>
 													</div>
 													<div class="col-md-2 text-center">
 														<i class="fa fa-exchange dir-icon"></i>
 													</div>
 													<div class="buy-input-box col-md-5">
-														<div class="form-group">
+														<!-- <div class="form-group">
 															<input type="text" class="form-control" placeholder="8 BTC" name="">
+														</div> -->
+														<div class="input-group mb-50">
+															<span class="input-group-addon">GHS</span>
+															<input type="text" class="form-control" placeholder="Bitcoin">
 														</div>
 													</div>
 												</div>
@@ -974,7 +982,7 @@
 														<i class="cc BTC mr-0"></i> 
 														<p class="mb-5">Bitcoin</p>
 														<small>@</small>
-														<p class="mb-0"><small>8670.07</small></p>
+														<p class="mb-0"><small>1USD</small></p>
 													</label>
 												</div>
 											</div>
@@ -985,7 +993,7 @@
 														<i class="cc ETH mr-0"></i> 
 														<p class="mb-5">Ethereum</p>
 														<small>@</small>
-														<p class="mb-0"><small>8670.07</small></p>
+														<p class="mb-0"><small>1USD</small></p>
 													</label>
 												</div>
 											</div>
@@ -996,7 +1004,7 @@
 														<i class="cc LTC mr-0"></i> 
 														<p class="mb-5">Lite</p>
 														<small>@</small>
-														<p class="mb-0"><small>8670.07</small></p>
+														<p class="mb-0"><small>1USD</small></p>
 													</label>
 												</div>
 											</div>
