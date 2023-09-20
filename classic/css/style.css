@@ -27,6 +27,15 @@ File: scss
 @import url(icons/iconsmind/style.css);
 @import url(../../assets/vendor_components/animate/animate.css);
 @import url(../../assets/vendor_components/perfect-scrollbar/css/perfect-scrollbar.css);
+
+
+/* my progress bar  */
+/* styles.css */
+
+/* styles.css */
+
+
+
 html {
   height: 100%;
   font-size: 14px; }
@@ -18398,7 +18407,7 @@ input[type="color"] {
 .form-control {
   border-radius: 5px;
   box-shadow: none;
-  border-color: #688cb4;
+  border-color: #f2f3f5;
   height: auto; }
   .form-control:focus {
     box-shadow: none; }
@@ -18442,12 +18451,12 @@ textarea.form-control {
 
 .input-group .input-group-addon {
   border-radius: 5px 0px 0px 5px;
-  border-color: #688cb4;
+  border-color: #f2f3f5;
   background-color: #ffffff; }
 .input-group .input-group-text {
   padding: .425rem .75rem;
   background-color: #ffffff;
-  border-color: #688cb4;
+  border-color: #f2f3f5;
   border-radius: 5px; }
 
 .input-group-addon {
