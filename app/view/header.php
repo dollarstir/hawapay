@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   
-<!-- Mirrored from crypto-admin-templates.multipurposethemes.com/sass/classic/index-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Jun 2023 04:42:06 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,15 +58,11 @@
       <div class="navbar-custom-menu r-side">
         <ul class="nav navbar-nav">
 		  <!-- full Screen -->
-	      <li class="search-bar">		  
-			  <div class="lookup lookup-circle lookup-right">
-			     <input type="text" name="s">
-			  </div>
-		  </li>			
+	     	
 		  <!-- Messages -->
 		  <li class="dropdown messages-menu">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Messages">
-			  <i class="mdi mdi-email"></i>
+			  <i class="mdi mdi-bell"></i>
 			</a>
 			<ul class="dropdown-menu animated bounceIn">
 
@@ -75,7 +70,7 @@
 				<div class="p-20">
 					<div class="flexbox">
 						<div>
-							<h4 class="mb-0 mt-0">Messages</h4>
+							<h4 class="mb-0 mt-0">Notification</h4>
 						</div>
 						<div>
 							<a href="#" class="text-danger">Clear All</a>
@@ -162,192 +157,13 @@
 			  </li>
 			  <li class="footer">				  
 				  <a href="#">See all e-Mails</a>
-			  </li>
+			  </li><li>
+            <a href="#" data-toggle="control-sidebar" title="Setting"><i class="fa fa-cog fa-spin"></i></a>
+          </li>
 			</ul>
 		  </li>
-		  <!-- Notifications -->
-		  <li class="dropdown notifications-menu">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Notifications">
-			  <i class="mdi mdi-bell"></i>
-			</a>
-			<ul class="dropdown-menu animated bounceIn">
-
-			  <li class="header">
-				<div class="p-20">
-					<div class="flexbox">
-						<div>
-							<h4 class="mb-0 mt-0">Notifications</h4>
-						</div>
-						<div>
-							<a href="#" class="text-danger">Clear All</a>
-						</div>
-					</div>
-				</div>
-			  </li>
-
-			  <li>
-				<!-- inner menu: contains the actual data -->
-				<ul class="menu sm-scrol">
-				  <li>
-					<a href="#">
-					  <i class="fa fa-users text-info"></i> Curabitur id eros quis nunc suscipit blandit.
-					</a>
-				  </li>
-				  <li>
-					<a href="#">
-					  <i class="fa fa-warning text-warning"></i> Duis malesuada justo eu sapien elementum, in semper diam posuere.
-					</a>
-				  </li>
-				  <li>
-					<a href="#">
-					  <i class="fa fa-users text-danger"></i> Donec at nisi sit amet tortor commodo porttitor pretium a erat.
-					</a>
-				  </li>
-				  <li>
-					<a href="#">
-					  <i class="fa fa-shopping-cart text-success"></i> In gravida mauris et nisi
-					</a>
-				  </li>
-				  <li>
-					<a href="#">
-					  <i class="fa fa-user text-danger"></i> Praesent eu lacus in libero dictum fermentum.
-					</a>
-				  </li>
-				  <li>
-					<a href="#">
-					  <i class="fa fa-user text-primary"></i> Nunc fringilla lorem 
-					</a>
-				  </li>
-				  <li>
-					<a href="#">
-					  <i class="fa fa-user text-success"></i> Nullam euismod dolor ut quam interdum, at scelerisque ipsum imperdiet.
-					</a>
-				  </li>
-				</ul>
-			  </li>
-			  <li class="footer">
-				  <a href="#">View all</a>
-			  </li>
-			</ul>
-		  </li>	
-		  <!-- Tasks -->
-		  <li class="dropdown messages-menu">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Tasks">
-			  <i class="mdi mdi-comment-alert"></i>
-			</a>
-			<ul class="dropdown-menu animated bounceIn">
-
-			  <li class="header">
-				<div class="p-20">
-					<div class="flexbox">
-						<div>
-							<h4 class="mb-0 mt-0">You have 6 tasks</h4>
-						</div>
-						<div>
-							<a href="#" class="text-danger">Clear All</a>
-						</div>
-					</div>
-				</div>
-			  </li>
-			  <li>
-				<!-- inner menu: contains the actual data -->
-				<ul class="menu sm-scrol">
-				  <li><!-- Task item -->
-                    <a href="#">
-                      <h6>
-                        Lorem ipsum dolor sit amet
-                        <small class="pull-right">30%</small>
-                      </h6>
-                      <div class="progress xs mb-0">
-                        <div class="progress-bar progress-bar-primary" style="width: 30%" role="progressbar"
-                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">30% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <h6>
-                        Vestibulum nec ligula
-                        <small class="pull-right">20%</small>
-                      </h6>
-                      <div class="progress xs mb-0">
-                        <div class="progress-bar progress-bar-danger" style="width: 20%" role="progressbar"
-                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">20% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <h6>
-                        Donec id leo ut ipsum
-                        <small class="pull-right">70%</small>
-                      </h6>
-                      <div class="progress xs mb-0">
-                        <div class="progress-bar progress-bar-info" style="width: 70%" role="progressbar"
-                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">70% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <h6>
-                        Praesent vitae tellus
-                        <small class="pull-right">40%</small>
-                      </h6>
-                      <div class="progress xs mb-0">
-                        <div class="progress-bar progress-bar-warning" style="width: 40%" role="progressbar"
-                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">40% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <h6>
-                        Nam varius sapien
-                        <small class="pull-right">80%</small>
-                      </h6>
-                      <div class="progress xs mb-0">
-                        <div class="progress-bar progress-bar-danger" style="width: 80%" role="progressbar"
-                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">80% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <!-- end task item -->
-                  <li><!-- Task item -->
-                    <a href="#">
-                      <h6>
-                        Nunc fringilla
-                        <small class="pull-right">90%</small>
-                      </h6>
-                      <div class="progress xs mb-0">
-                        <div class="progress-bar progress-bar-primary" style="width: 90%" role="progressbar"
-                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                          <span class="sr-only">90% Complete</span>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-				</ul>
-			  </li>
-			  <li class="footer">				  
-				  <a href="#">View all tasks</a>
-			  </li>
-			</ul>
-		  </li>	
+		  
+		  
 			
 		  <!-- User Account-->
           <li class="dropdown user user-menu">
@@ -382,9 +198,9 @@
 			
 		  
           <!-- Control Sidebar Toggle Button -->
-          <li>
+          <!-- <li>
             <a href="#" data-toggle="control-sidebar" title="Setting"><i class="fa fa-cog fa-spin"></i></a>
-          </li>
+          </li> -->
 			
         </ul>
       </div>

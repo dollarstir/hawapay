@@ -341,63 +341,25 @@
 							</div>
 							<!-- /.tab-pane -->
 
+
+							<!-- tab for Mobile Numbers -->
+
 							<div class="tab-pane box" id="settings">
 
 								<div class="box p-15">
-									<form class="form-horizontal form-element">
-										<div class="form-group row">
-											<label for="inputName" class="col-sm-2 control-label">Name</label>
+									<hr>
+									<h3 style="padding:20px;font-weight: bold;">Mobile Numbers</h3>
+									<hr>
+										<h4>Mobile Money</h4>
+										<h6>Your mobile numbers used for making and receiving payments</h6>
 
-											<div class="col-sm-10">
-												<input type="email" class="form-control" id="inputName" placeholder="">
+										<div class="numbersbox">
+											<div class="row">
+												<i></i>
 											</div>
 										</div>
-										<div class="form-group row">
-											<label for="inputEmail" class="col-sm-2 control-label">Email</label>
 
-											<div class="col-sm-10">
-												<input type="email" class="form-control" id="inputEmail" placeholder="">
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="inputPhone" class="col-sm-2 control-label">Phone</label>
 
-											<div class="col-sm-10">
-												<input type="tel" class="form-control" id="inputPhone" placeholder="">
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="inputExperience"
-												class="col-sm-2 control-label">Experience</label>
-
-											<div class="col-sm-10">
-												<textarea class="form-control" id="inputExperience"
-													placeholder=""></textarea>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label for="inputSkills" class="col-sm-2 control-label">Skills</label>
-
-											<div class="col-sm-10">
-												<input type="text" class="form-control" id="inputSkills" placeholder="">
-											</div>
-										</div>
-										<div class="form-group row">
-											<div class="ml-auto col-sm-10">
-												<div class="checkbox">
-													<input type="checkbox" id="basic_checkbox_1" checked="">
-													<label for="basic_checkbox_1"> I agree to the</label>
-													&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Terms and Conditions</a>
-												</div>
-											</div>
-										</div>
-										<div class="form-group row">
-											<div class="ml-auto col-sm-10">
-												<button type="submit"
-													class="btn btn-rounded btn-success">Submit</button>
-											</div>
-										</div>
-									</form>
 								</div>
 							</div>
 							<!-- /.tab-pane -->
