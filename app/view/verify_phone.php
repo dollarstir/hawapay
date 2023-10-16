@@ -1,3 +1,52 @@
+<?php
+
+session_start();
+
+// checking if user session is set
+
+ if(isset($_SESSION['account_user'])){
+    $email = $_SESSION['account_user']['email'];
+    $uid = $_SESSION['account_user']['uid'];
+    $query = new Query();
+    $result = $query->fetchAll("SELECT * FROM user_accounts WHERE email = ? ", [$email]);
+    if($result){
+        if($result[0]['email_verified'] == 1  && $result[0]['primary_verified'] == 1) {
+            echo '<script>window.location="dashboard"</script>';
+        }
+        elseif($result[0]['email_verified'] != 1  && $result[0]['primary_verified'] == 1) {
+            echo '<script>window.location="verify-email"</script>';
+        }
+        elseif($result[0]['email_verified'] == 1  && $result[0]['primary_verified'] != 1) {
+            echo '<script>window.location="verify-phone"</script>';
+
+        }
+
+        elseif($result[0]['email_verified'] != 1  && $result[0]['primary_verified'] != 1) {
+            echo '<script>window.location="verify-email"</script>';
+        }
+
+
+        // if(isset($_POST['primary_nunmber'])){
+
+        //     (new otpModel())->addprimarynumber($email,$_POST['primary_nunmber']);
+     
+        // }
+    }
+    else{
+        echo '<script>window.location="register"</script>';
+    }
+
+
+  
+
+
+ }
+
+ else{
+    echo '<script>window.location="register"</script>';
+ }
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +59,8 @@
     <!-- Add Font Awesome for icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <style>
         /* Custom CSS for the phone number verification page */
         body {
@@ -77,10 +128,11 @@
                 </div> -->
                            <h1 class="verification-title">Phone Number Verification</h1>
                 <p>Please enter your phone number to receive an OTP (One-Time Password) for verification. This will be your primary phone number </p>
-                <form>
+                <form class="addprimary">
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control verification-input" placeholder="Enter your primary phone number">
+                            <input type="number" class="form-control verification-input" placeholder="Enter your primary phone number" name="primary_nunmber">
+                            <input type="hidden" name="email" id="" value= "<?=$email; ?>">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-mobile-alt"></i></span>
                             </div>
@@ -95,8 +147,14 @@
     </div>
 
     <!-- Add Bootstrap JS and Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script> -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <!-- <script src="app/view/allfiles/js/tuantem.js"></script>
+ -->
+
+ <script src="app/view/allfiles/assets/vendor_components/jquery-3.3.1/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="app/view/allfiles/js/tuantem.js"></script>
 </body>
 </html>

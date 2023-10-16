@@ -73,5 +73,37 @@ $(function() {
 
     });
 
+
+    // login form
+
+    $(document).on('submit', '.loginfrm', function(e){
+        e.preventDefault();
+        var data = new FormData(this);
+        var url ='worker?action=loginuser';
+        myajax(url,data);   
+
+    });
+
+
+    // addprimary Number 
+
+    $(document).on('submit', '.addprimary', function(e){
+        e.preventDefault();
+        var data = new FormData(this);
+        var url ='worker?action=addprimaryphone';
+        myajax(url,data);   
+
+    });
+
+    // verify otp for primary number
+
+  
+    $(document).on('submit', '.frmotp', function(e){
+        e.preventDefault();
+        var data = new FormData(this);
+        var url ='worker?action=verifyotp';
+        myajax(url,data);   
+
+    });
   
 })

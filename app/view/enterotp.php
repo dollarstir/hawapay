@@ -1,3 +1,15 @@
+
+<?php
+
+session_start();
+
+if(!isset($_SESSION['account_user'])){
+    echo '<script>window.location="register"</script>';
+}
+
+  
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +20,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Add Font Awesome for icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <style>
@@ -65,9 +78,10 @@
                 <i class="fas fa-lock verification-icon"></i>
                 <h1 class="verification-title">OTP Verification</h1>
                 <p>Please enter the OTP (One-Time Password) you received to verify your phone number.</p>
-                <form>
+                <form class="frmotp">
                     <div class="form-group">
-                        <input type="text" class="form-control verification-input" placeholder="Enter OTP">
+                        <input type="number" class="form-control verification-input" placeholder="Enter OTP" name="otp">
+                        <input type="hidden" name="email" value="<?=$_SESSION['account_user']['email'];?>">
                     </div>
                     <button type="submit" class="btn btn-primary verify-button">Verify</button>
                 </form>
@@ -76,8 +90,12 @@
     </div>
 
     <!-- Add Bootstrap JS and Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+    <script src="app/view/allfiles/assets/vendor_components/jquery-3.3.1/jquery-3.3.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="app/view/allfiles/js/tuantem.js"></script>
+
 </body>
 </html>

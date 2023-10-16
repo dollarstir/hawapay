@@ -135,7 +135,7 @@ class registrationModel{
                 ];
                 $result = $query->insert("INSERT INTO email_verification (uid,verification_code,exp_date,date_created,date_updated) VALUES (?,?,?,?,?)", $data);
                 if($result){
-                    $link = "http://localhost/tuantem/verify-email?token=".$token;
+                    $link = Config::get("APP_URL").'/verify-email?token='.$token;
                     $message = "Please click the link below to verify your email address <br><br> <a href='$link'>Verify Email</a>";
                     $subject = "Email Verification";
                     $headers = "From: Tuantem   \r\n";
