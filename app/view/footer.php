@@ -1,3 +1,26 @@
+<!-- izimodal -->
+		<div class="modal " id="editmodal" data-izimodal-title="Edit Record" data-izimodal-icon="fa fa-info">
+								<div class="editmodalcontent" style="padding:20px;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
+									
+								</div>
+							
+		</div>
+
+		<div class="modal " id="deletemodal" data-izimodal-title="Delete dialog" data-izimodal-icon="fa fa-info">
+								<div class="deletemodalcontent" style="padding:20px;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
+									
+								</div>
+							
+		</div>
+
+		<div class="modal " id="addmodal" data-izimodal-title="Add record" data-izimodal-icon="fa fa-warning">
+								<div class="addmodalcontent" style="padding:20px;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
+									
+								</div>
+							
+		</div>
+<!-- izimodal -->
+
 <footer class="main-footer">
     <div class="pull-right d-none d-sm-inline-block">
         <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
@@ -308,3 +331,6 @@
 	<script src="app/view/allfiles/js/demo.js"></script>
 		<!-- demo purposes -->
 		<script src="app/view/allfiles/js/pages/timeline.js"></script>
+		<script src="app/view/allfiles/js/izimodal.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+		<script src="app/view/allfiles/js/tuantem.js"></script>

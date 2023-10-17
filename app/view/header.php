@@ -1,8 +1,11 @@
 <?php
  
- session_start();
+//  session_start();
 
  mainchecker('account_user','login');
+ $user = (new userModel())->getUserData($_SESSION['account_user']['uid']);
+ 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +25,11 @@
 	
 	<!-- theme style -->
 	<link rel="stylesheet" href="app/view/allfiles/css/style.css">
+
+	<!-- izimodalm -->
+	<link rel="stylesheet" href="app/view/allfiles/css/izimodal.min.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 	
 	<!-- Crypto Admin skins -->
 	<link rel="stylesheet" href="app/view/allfiles/css/skin_color.css">
@@ -174,17 +182,17 @@
 		  <!-- User Account-->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="User">
-			<div class=" rounded-circle" style="background-color:#5A8DEE;border-color: #5A8DEE;border-radius:50%;color:#fff;width:30px;height:30px;padding:4px;font-weight:bolder;font-size:12px;">FE</div>	 
+			<div class=" rounded-circle" style="background-color:#5A8DEE;border-color: #5A8DEE;border-radius:50%;color:#fff;width:30px;height:30px;padding:4px;font-weight:bolder;font-size:12px;"><?=$user['first_name'][0].''.$user['last_name'][0];?></div>	 
             </a>
             <ul class="dropdown-menu animated flipInX">
               <!-- User image -->
               <li class="user-header bg-img" style="background-image: url(app/view/allfiles/images/user-info.jpg)" data-overlay="3">
 				  <div class="flexbox align-self-center">					  
-				  <div class="float-left rounded-circle" style="background-color:#5A8DEE;border-color: #5A8DEE;border-radius:50%;color:#fff;width:50px;height:50px;padding:12px;font-weight:bolder;font-size:20px;">FE</div>	 
+				  <div class="float-left rounded-circle" style="background-color:#5A8DEE;border-color: #5A8DEE;border-radius:50%;color:#fff;width:50px;height:50px;padding:12px;font-weight:bolder;font-size:20px;"><?=$user['first_name'][0].''.$user['last_name'][0];?></div>	 
 				   					  
 					<h4 class="user-name align-self-center">
-					  <span>Samuel Brus</span>
-					  <small>samuel@gmail.com</small>
+					  <span><?=$user['first_name'].' '.$user['last_name'];?></span>
+					  <small><?=$user['email'];?></small>
 					</h4>
 				  </div>
               </li>

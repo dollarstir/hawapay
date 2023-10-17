@@ -28,4 +28,16 @@ if(isset($_GET['action'])){
         echo  json_encode( (new otpModel())->verifyotp($data['email'],$data['otp']));
         
     }
+
+    if($action == 'logoutdialog'){
+       
+        echo  json_encode((new userController())->logoutdialog());
+        
+    }
+
+    if($action == 'logout'){
+       
+        echo  json_encode((new userModel())->logout());
+        
+    }
 }

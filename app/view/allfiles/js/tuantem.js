@@ -5,6 +5,43 @@ $(function() {
     // toastr.success('Have fun storming the castle!', 'Miracle Max Says')
 
 
+
+    // edit  modal trigger 
+    $("#editmodal").iziModal({
+        headerColor: "#5a8dee",
+        radius: 30,
+        width: 600,
+        top: 100,
+        bottom: 100,
+    });
+
+    // delete modal trigger
+    $("#deletemodal").iziModal({
+        headerColor: "#ff5b5c",
+        radius: 30,
+        width: 600,
+        top: 100,
+        bottom: 100,
+    });
+
+
+    // add modal 
+    $("#addmodal").iziModal({
+        headerColor: "#5a8dee",
+        radius: 30,
+        width: 600,
+        top: 100,
+        bottom: 100,
+    });
+
+
+
+    // close modal 
+    function closeModal(modalid) {
+        $('#'+modalid).iziModal('close');
+
+    }
+
     function isloading(){
         $('.statusloading').show();
     }
@@ -31,6 +68,13 @@ $(function() {
                     window.location.href = data.action;
                 }, 1000);
             }
+        }
+
+        else if(data.type == 'loaddata'){
+            $('.statusloading').hide();
+            $('.'+data.loadclass).html(data.message);
+
+
         }
         else{
             toastr.error(data.message, 'Error');
@@ -62,6 +106,8 @@ $(function() {
         //  call the ajax function
         $.ajax(options);
     }
+
+    // 
 
 
     // register form
@@ -105,5 +151,34 @@ $(function() {
         myajax(url,data);   
 
     });
+
+
+    // show logout prompt
+    $(document).on('click', '.logoutopt', function(e){
+        e.preventDefault();
+        var url ='worker?action=logoutdialog';
+        var data = {};
+        myajax(url,data,'','GET');   
+
+    });
+
+    // logout btn 
+    $(document).on('click', '.btnlogout', function(e){
+        e.preventDefault();
+        var url ='worker?action=logout';
+        var data = {};
+        myajax(url,data,'','GET');  
+
+
+    });
+
+
+    
+
+    
+
+
+    
+
   
 })
