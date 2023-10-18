@@ -40,4 +40,13 @@ if(isset($_GET['action'])){
         echo  json_encode((new userModel())->logout());
         
     }
+
+    if($action == 'editgeneral'){
+        extract($_POST);
+        $data = $_POST;
+        // print_r($data);
+       
+        echo  json_encode((new userModel())->updategeneralinfo($data));
+        
+    }
 }

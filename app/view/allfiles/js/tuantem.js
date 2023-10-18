@@ -172,6 +172,15 @@ $(function() {
 
     });
 
+    // edit general info
+    $(document).on('submit', '.editgeneral', function(e){
+        e.preventDefault();
+        var data = new FormData(this);
+        var url ='worker?action=editgeneral';
+        myajax(url,data);   
+
+    });
+
 
     
 

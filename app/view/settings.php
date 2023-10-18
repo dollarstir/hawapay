@@ -10,8 +10,8 @@
 <?php 
 $user = (new  userModel())->getUserData($_SESSION['account_user']['uid']);
 $verification = ($user['id_verified'] ==1)?'<button class="btn btn-default" style="margin-top:15px;border-color: #edf0f2;">ID Verified</button>':'<button class="btn btn-primary" style="margin-top:15px;"> Verify Identity</button>';
-$dob = ($user['id_verified'] ==1)?'<input type="text" class="form-control h-50 fw-bolder" placeholder="type name" value="'.$user['dob'].'"
-disabled>':'<input type="date" class="form-control h-50 fw-bolder" placeholder="date of birth" value="'.$user['dob'].'">';
+$dob = ($user['id_verified'] ==1)?'<input type="text" class="form-control h-50 fw-bolder" placeholder="type name" name="dob" value="'.$user['dob'].'"
+disabled>':'<input type="date" class="form-control h-50 fw-bolder" placeholder="date of birth" name="dob" value="'.$user['dob'].'">';
 
 
 $emailverified = ($user['email_verified'] ==1)?'<div class="" style="display:flex;justify-content:right;align-items:right;"><div class="me-1"><svg width="16" fill="#5aa17f" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM9.29 16.29L5.7 12.7c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0L10 14.17l6.88-6.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-7.59 7.59c-.38.39-1.02.39-1.41 0z"></path></svg></div><small class="dark-mint-text">Verified</small></div>':'<button class="btn btn-primary btn-sm" style="margin-top:15px;"> Verify Email</button>';
@@ -87,21 +87,23 @@ $emailverified = ($user['email_verified'] ==1)?'<div class="" style="display:fle
 								<h3 style="padding:20px;font-weight: bold;">General Info</h3>
 								<hr>
 
-								<form class="form-horizontal ">
+								<form class="form-horizontal  editgeneral">
 									<div class="form-group row padding:10px !important;">
 										<div class="col-lg-4">
 
 											<label class="col-md-6">First Name</label>
 											<div class="col-md-12">
-												<input type="text" class="form-control h-50 fw-bolder" placeholder="type name" value="<?=$user['first_name']?>"
+												<input type="text" class="form-control h-50 fw-bolder" placeholder="type name" name="first_name" value="<?=$user['first_name']?>"
 													 disabled>
+
+													 <input type="hidden" name="uid" value="<?=$user['uid'];?>">
 											</div>
 										</div>
 										<div class="col-lg-4">
 
 											<label class="col-md-6">last Name</label>
 											<div class="col-md-12">
-												<input type="text" class="form-control h-50 fw-bolder" placeholder="type name" value="<?=$user['last_name']?>"
+												<input type="text" class="form-control h-50 fw-bolder" placeholder="type name" name="last_name" value="<?=$user['last_name']?>"
 													disabled>
 											</div>
 										</div>
@@ -122,7 +124,7 @@ $emailverified = ($user['email_verified'] ==1)?'<div class="" style="display:fle
 
 											<label class="col-md-6">Phone Number</label>
 											<div class="col-md-12">
-												<input type="number" class="form-control h-50 fw-bolder" placeholder="phone number" value="<?=$user['primary_number']?>"
+												<input type="number" class="form-control h-50 fw-bolder" placeholder="phone number" name="primary_number" value="<?=$user['primary_number']?>"
 													disabled>
 											</div>
 										</div>
@@ -142,11 +144,28 @@ $emailverified = ($user['email_verified'] ==1)?'<div class="" style="display:fle
 
 
 									</div>
-									<div style="justify-content: center; display: flex;"><button type="button"
-											class="btn btn-primary mb-5">Save</button></div>
+									<div style="justify-content: center; display: flex;">
+										<?php  
+										if(!empty($user['first_name']) && !empty($user['last_name']) && !empty($user['dob']) && !empty($user['primary_number']) && !empty($user['email']) && $user['id_verified'] == 1){
+											echo '<button type="submit" disabled
+											class="btn btn-primary mb-5">Save
+										</button>';
+										}
+										else{
+											echo '<button type="submit" 
+											class="btn btn-primary mb-5">Save
+										</button>';
+										}
+										
+										;?>
+
+									</div>
+								</form>
 
 									<hr>
 									<!-- Address section -->
+
+								<form class="form-horizontal  editgeneral" >
 
 									<h3 style="padding:20px;font-weight: bold;">Address</h3>
 									<hr>
@@ -156,7 +175,7 @@ $emailverified = ($user['email_verified'] ==1)?'<div class="" style="display:fle
 
 											<label class="col-md-6">Country</label>
 											<div class="col-md-12">
-												<select class="form-control h-50 fw-bolder">
+												<select class="form-control h-50 fw-bolder" name="country">
 													<?php 
 
 													if(empty($user['country'])){
@@ -177,7 +196,7 @@ $emailverified = ($user['email_verified'] ==1)?'<div class="" style="display:fle
 
 											<label class="col-md-6">City</label>
 											<div class="col-md-12">
-												<input type="text" class="form-control h-50 fw-bolder" placeholder="city">
+												<input type="text" class="form-control h-50 fw-bolder" placeholder="city" value="<?=$user['city'];?>" name="city" >
 											</div>
 										</div>
 
@@ -190,14 +209,14 @@ $emailverified = ($user['email_verified'] ==1)?'<div class="" style="display:fle
 
 											<label class="col-md-6">Street Address 1</label>
 											<div class="col-md-12">
-												<input type="text" class="form-control h-50 fw-bolder" placeholder="address 1">
+												<input type="text" class="form-control h-50 fw-bolder" placeholder="address 1" value="<?=$user['address'];?>" name="address">
 											</div>
 										</div>
 										<div class="col-lg-4">
 
 											<label class="col-md-6">Street Address 2</label>
 											<div class="col-md-12">
-												<input type="text" class="form-control h-50 fw-bolder" placeholder="address 2">
+												<input type="text" class="form-control h-50 fw-bolder" placeholder="address 2" value="<?= $user['address2'];?>" name="address2">
 											</div>
 										</div>
 
@@ -209,32 +228,22 @@ $emailverified = ($user['email_verified'] ==1)?'<div class="" style="display:fle
 											<label class="col-md-8">House number / GPS Address</label>
 											<div class="col-md-12">
 												<input type="text" class="form-control h-50 fw-bolder"
-													placeholder="House number / GPS Address" disabled>
+													placeholder="House number / GPS Address"  value="<?=$user['gps_address'];?>" name="gps_address">
+													<input type="hidden" name="uid" value="<?=$user['uid'];?>">
 											</div>
+
+
 										</div>
 
 
 									</div>
-									<div style="justify-content: center; display: flex;"><button type="button"
+									<div style="justify-content: center; display: flex;"><button type="submit"
 											class="btn btn-primary mb-5">Save</button></div>
 
 									<hr>
 
 
 
-									<!-- <div class="form-group">
-								<label class="col-md-6">Select Number of people</label>
-								<div class="col-md-6">
-									<select class="form-control">
-										<option>All Contacts</option>
-										<option>10</option>
-										<option>20</option>
-										<option>30</option>
-										<option>40</option>
-										<option>Custome</option>
-									</select>
-								</div>
-							</div> -->
 								</form>
 
 

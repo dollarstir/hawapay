@@ -48,14 +48,16 @@ class Query extends database{
         if ($success) {
             // Check if any rows were affected by the update operation
 
-            if($rowsAffected){
-                return $stmt->rowCount();
-            }
-            if ($stmt->rowCount() > 0) {
-                return true; // Update was successful
-            } else {
-                return false; // No rows were affected, so update failed
-            }
+            // if($rowsAffected){
+            //     return $stmt->rowCount();
+            // }
+            // if ($stmt->rowCount() > 0) {
+            //     return true; // Update was successful
+            // } else {
+            //     return false; // No rows were affected, so update failed
+            // }
+
+            return true;
         } else {
             return false; // Update failed
         }
