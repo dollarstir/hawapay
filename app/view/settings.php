@@ -9,7 +9,7 @@
 
 <?php 
 $user = (new  userModel())->getUserData($_SESSION['account_user']['uid']);
-$verification = ($user['id_verified'] ==1)?'<button class="btn btn-default" style="margin-top:15px;border-color: #edf0f2;">ID Verified</button>':'<button class="btn btn-primary" style="margin-top:15px;"> Verify Identity</button>';
+$verification = ($user['id_verified'] ==1)?'<button class="btn btn-default" style="margin-top:15px;border-color: #edf0f2;">ID Verified</button>':'<button class="btn btn-primary verifyidopt"  data-izimodal-open="#verifyid" data-izimodal-transitionin="fadeInDown" style="margin-top:15px;"> Verify Identity</button>';
 $dob = ($user['id_verified'] ==1)?'<input type="text" class="form-control h-50 fw-bolder" placeholder="type name" name="dob" value="'.$user['dob'].'"
 disabled>':'<input type="date" class="form-control h-50 fw-bolder" placeholder="date of birth" name="dob" value="'.$user['dob'].'">';
 

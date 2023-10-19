@@ -34,6 +34,16 @@ $(function() {
         bottom: 100,
     });
 
+      // verify modal modal 
+    $("#verifyid").iziModal({
+        headerColor: "#5a8dee",
+        radius: 30,
+        width: 600,
+        top: 100,
+        bottom: 100,
+    });
+
+
 
 
     // close modal 
@@ -180,6 +190,19 @@ $(function() {
         myajax(url,data);   
 
     });
+
+
+    // show verification id form 
+
+      // show logout prompt
+      $(document).on('click', '.verifyidopt', function(e){
+        e.preventDefault();
+        var url ='worker?action=verifyiddialog';
+        var data = {};
+        myajax(url,data,'','GET');   
+
+    });
+
 
 
     

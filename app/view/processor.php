@@ -49,4 +49,11 @@ if(isset($_GET['action'])){
         echo  json_encode((new userModel())->updategeneralinfo($data));
         
     }
+
+    if($action == 'verifyiddialog'){
+       
+        echo  json_encode((new kycController())->kycforms());
+        
+        
+    }
 }

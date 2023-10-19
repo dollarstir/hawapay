@@ -19,7 +19,19 @@
 								</div>
 							
 		</div>
+
+
+
+		<div class="modal " id="verifyid" data-izimodal-title="Verifiy Identity" data-izimodal-icon="fa fa-id-card">
+								<div class="verifyidcontent" style="padding:20px;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
+									
+								</div>
+							
+		</div>
 <!-- izimodal -->
+
+
+
 
 <footer class="main-footer">
     <div class="pull-right d-none d-sm-inline-block">

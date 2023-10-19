@@ -204,7 +204,7 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="settings"><i class="ion ion-settings"></i> Account Setting</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="javascript:void(0)"><i class="ion-log-out"></i> Logout</a>
+					<a class="dropdown-item logoutopt"   data-izimodal-open="#deletemodal" data-izimodal-transitionin="fadeInDown"  href="javascript:void(0)"><i class="ion-log-out"></i> Logout</a>
 					<div class="dropdown-divider"></div>
 					<!-- <div class="p-10"><a href="javascript:void(0)" class="btn btn-sm btn-rounded btn-success">View Profile</a></div> -->
               </li>
