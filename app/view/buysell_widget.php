@@ -16,7 +16,7 @@ $user  = (new userModel)->getUserData($_SESSION['account_user']['uid']);
 									<div class="tab-pane active" id="tabid1" role="tabpanel">
 										<?php
 
-										if($user['id_verified'] !=1){
+										if($user['id_verified']  == ""){
 
 											echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 											Kindly go the settings page (Settings -> My Profile -> Verify Identity) to verify your identify to gain access to all the features availabe. 
@@ -25,8 +25,15 @@ $user  = (new userModel)->getUserData($_SESSION['account_user']['uid']);
 
 											
 										}
+										elseif($user['id_verified'] == 0 ){
 
-										else{
+											echo '<div class="alert alert-info alert-dismissible fade show" role="alert">
+											 Your  Id verification documents are under review
+																					  </div>';
+
+										}
+
+										elseif($user['id_verified'] == 1){
 
 											echo '<h4 class="box-title mb-15">Currency</h4>
 											<div class="row bb-1 pb-15 mb-15">

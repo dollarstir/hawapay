@@ -345,4 +345,12 @@
 		<script src="app/view/allfiles/js/pages/timeline.js"></script>
 		<script src="app/view/allfiles/js/izimodal.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+		<!-- steps  -->
+	<script src="app/view/allfiles/assets/vendor_components/jquery-steps-master/build/jquery.steps.js"></script>
+   
+   <!-- validate  -->
+    <script src=".app/view/allfiles/assets/vendor_components/jquery-validation-1.17.0/dist/jquery.validate.min.js"></script>
+		   <!-- wizard  -->
+		   <script src="app/view/allfiles/js/pages/steps.js"></script>
 		<script src="app/view/allfiles/js/tuantem.js"></script>
