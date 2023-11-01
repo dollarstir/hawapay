@@ -32,6 +32,16 @@
 
 
 
+  <!-- Modals -->
+
+  	<div class="modal center-modal fade" id="modal-universal" tabindex="-1" >
+	  
+	</div>
+  
+ <!-- modals -->
+
+
+
 
 <footer class="main-footer">
     <div class="pull-right d-none d-sm-inline-block">

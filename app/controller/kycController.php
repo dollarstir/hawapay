@@ -68,7 +68,7 @@ class kycController{
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group">
-									<label for="step1file">Browse Image File</label>
+									<label for="step1file">Browse File (Pdf )</label>
 									<input type="file" class="form-control" id="step1file" name="idfile1"> </div>
 							</div>
 							

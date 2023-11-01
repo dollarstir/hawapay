@@ -9,12 +9,18 @@
 
 <?php 
 $user = (new  userModel())->getUserData($_SESSION['account_user']['uid']);
-if($user['id_verified'] ==1){
-	$verification = '<button class="btn btn-default" style="margin-top:15px;border-color: #edf0f2;">ID Verified</button>';
+
+if($user['id_verified']== ""){
+	$verification = '<button class="btn btn-primary verifyidopt"  data-izimodal-open="#verifyid" data-izimodal-transitionin="fadeInDown" style="margin-top:15px;"> Verify Identity</button>';
 }
+
 elseif($user['id_verified'] == 0){
 	$verification = '<button class="btn btn-info" style="margin-top:15px;border-color: #edf0f2;">Uder Review</button>';
 }
+elseif($user['id_verified'] ==1){
+	$verification = '<button class="btn btn-default" style="margin-top:15px;border-color: #edf0f2;">ID Verified</button>';
+}
+
 
 elseif($user['id_verified']== ""){
 	$verification = '<button class="btn btn-primary verifyidopt"  data-izimodal-open="#verifyid" data-izimodal-transitionin="fadeInDown" style="margin-top:15px;"> Verify Identity</button>';

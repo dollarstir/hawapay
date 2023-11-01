@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 18, 2023 at 02:17 AM
+-- Generation Time: Nov 02, 2023 at 01:03 AM
 -- Server version: 10.6.12-MariaDB-0ubuntu0.22.04.1
 -- PHP Version: 8.1.21
 
@@ -93,6 +93,24 @@ INSERT INTO `sms_verification` (`smv_id`, `uid`, `verification_code`, `exp_date`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `transaction`
+--
+
+CREATE TABLE `transaction` (
+  `transaction_id` int(11) NOT NULL,
+  `uid` int(11) NOT NULL,
+  `transaction_title` text DEFAULT NULL,
+  `transaction_ref` text DEFAULT NULL,
+  `date_created` varchar(100) DEFAULT NULL,
+  `time_created` varchar(100) DEFAULT NULL,
+  `date_updated` varchar(100) DEFAULT NULL,
+  `transaction_status` int(11) DEFAULT NULL COMMENT '-1: rejected 0: pending, 1: completed ',
+  `transaction_type` int(11) DEFAULT NULL COMMENT '1: topup , 2: Deposit 3: withdrawal'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_accounts`
 --
 
@@ -134,7 +152,7 @@ CREATE TABLE `user_accounts` (
 --
 
 INSERT INTO `user_accounts` (`uid`, `first_name`, `last_name`, `dob`, `primary_number`, `secondary_number`, `email`, `country`, `city`, `address`, `address2`, `gps_address`, `account_status`, `account_type`, `email_verified`, `primary_verified`, `secondary_verified`, `auth_type`, `google_auth`, `sms_auth`, `id_verified`, `daily_limit`, `referral_code`, `agent`, `password`, `user_ip`, `date_created`, `date_updated`, `wallet1`, `wallet2`) VALUES
-(10, 'Frederick', 'Ennin', NULL, '0556676471', NULL, 'kpin463@gmail.com', NULL, NULL, NULL, NULL, NULL, 1, 1, '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$nnGhUxbWNaybrtmYOkow7OYaIB95/KDRju6z4IRmpbXHjbiKKCf6C', NULL, '2023-10-15 00:05:53', '2023-10-15 00:05:53', 0, 0);
+(10, 'Frederick', 'Ennin', '2023-10-19', '0556676471', NULL, 'kpin463@gmail.com', 'Ghana', 'Accra', 'Kasoa', '', 'GE-SASikhillijiljlj', 1, 1, '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$nnGhUxbWNaybrtmYOkow7OYaIB95/KDRju6z4IRmpbXHjbiKKCf6C', NULL, '2023-10-15 00:05:53', '2023-10-15 00:05:53', 50, 0);
 
 --
 -- Indexes for dumped tables
@@ -151,6 +169,12 @@ ALTER TABLE `email_verification`
 --
 ALTER TABLE `sms_verification`
   ADD PRIMARY KEY (`smv_id`);
+
+--
+-- Indexes for table `transaction`
+--
+ALTER TABLE `transaction`
+  ADD PRIMARY KEY (`transaction_id`);
 
 --
 -- Indexes for table `user_accounts`
@@ -173,6 +197,12 @@ ALTER TABLE `email_verification`
 --
 ALTER TABLE `sms_verification`
   MODIFY `smv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `transaction`
+--
+ALTER TABLE `transaction`
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user_accounts`
