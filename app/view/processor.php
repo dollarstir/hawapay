@@ -56,4 +56,13 @@ if(isset($_GET['action'])){
         
         
     }
+
+    if($action == 'loaddata'){
+        extract($_POST);
+      
+            extract($_GET);
+            $class = new $class();
+            $class->$function();
+        
+    }
 }

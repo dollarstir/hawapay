@@ -205,6 +205,29 @@ $(function() {
 
 
 
+    function loadData(className, functionName, tableID) {
+        $.ajax({
+          url:
+            "worker?action=loaddata&class=" +
+            className +
+            "&function=" +
+            functionName +
+            "",
+          type: "GET",
+          // dataType: 'html',
+          beforeSend: function () {
+            $(".lmask").attr("style", "display:block !important;");
+          },
+          success: function (data) {
+            console.log(data);
+            $(".lmask").attr("style", "display:none !important;");
+            $("#" + tableID).html(data);
+          },
+        });
+      }
+
+
+
     
 
     
