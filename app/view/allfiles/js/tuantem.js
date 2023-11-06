@@ -225,6 +225,18 @@ $(function() {
           },
         });
       }
+    
+    //  deposit btn
+
+    $(document).on('click', '.btndepo', function(e){
+        // e.preventDefault();
+
+        $('#modal-universal').load('app/view/modals/deposit.php');
+
+    }
+    );
+
+
 
 
 

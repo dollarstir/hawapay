@@ -34,10 +34,14 @@
 	<!-- Crypto Admin skins -->
 	<link rel="stylesheet" href="app/view/allfiles/css/skin_color.css">
 
+	<link rel="stylesheet" href="app/view/allfiles/css/mask.css">
+
      
   </head>
 
 <body class="hold-transition light-skin sidebar-mini theme-classic fixed">
+	<!-- loading -->
+<div class="lmask" style="display:none;"></div>
 	
 <div class="wrapper">
 
