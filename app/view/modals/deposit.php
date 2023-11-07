@@ -16,11 +16,26 @@
                     <label for="" class="col-form-label">Enter Amount :</label>
                     <input type="text" class="form-control h-60 fw-bolder " style="font-size:large;color:#061f3c;" id="iptdeposit-amount" placeholder="Enter your amount">
                 </div>
+
+				<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="location3"><strong>Select Network</strong></label>
+										<select class="custom-select form-control" id="location3" name="idtype">
+											<option value="1">Ghana Card</option>
+											<option value="2">Passport</option>
+											<option value="3">Voters Id</option>
+											
+										</select>
+									</div>
+								</div>
+								
+						</div>
             </form>
 		  </div>
 		  <div class="mt-10  mb-10 d-flex justify-content-center" style="">
 			
-			<button type="button" class="btn btn-primary float-midle">Save changes</button>
+			<button type="button" class="btn btn-primary float-midle disabled">Save changes</button>
 		  </div>
 		</div>
 	  </div>
