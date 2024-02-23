@@ -230,11 +230,18 @@ $(function() {
 
     $(document).on('click', '.btndepo', function(e){
         // e.preventDefault();
-
         $('#modal-universal').load('app/view/modals/deposit.php');
+    });
 
-    }
-    );
+
+    // chnage password
+    $(document).on('submit', '.chnagepassword', function(e){
+        e.preventDefault();
+        var data = new FormData(this);
+        var url ='worker?action=changepassword';
+        myajax(url,data);   
+
+    });
 
 
 

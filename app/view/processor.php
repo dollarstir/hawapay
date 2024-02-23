@@ -1,68 +1,56 @@
 <?php
 
-
 if(isset($_GET['action'])){
-
     $action = $_GET['action'];
+    $data = $_POST; // Most actions use $_POST data, so we initialize it here.
 
-    if($action == 'registeruser'){
-        $data = $_POST;
-        echo  json_encode((new registrationModel())->register($data));
+    switch ($action) {
+        case 'registeruser':
+            echo json_encode((new registrationModel())->register($data));
+            break;
         
-    }
+        case 'loginuser':
+            echo json_encode((new loginModel())->login($data));
+            break;
 
-    if($action == 'loginuser'){
-        $data = $_POST;
-        echo  json_encode((new loginModel())->login($data));
-        
-    }
+        case 'addprimaryphone':
+            echo json_encode((new otpModel())->addprimarynumber($data['email'], $data['primary_number']));
+            break;
 
-    if($action == 'addprimaryphone'){
-        $data = $_POST;
-        echo  json_encode( (new otpModel())->addprimarynumber($data['email'],$data['primary_nunmber']));
-        
-    }
+        case 'verifyotp':
+            echo json_encode((new otpModel())->verifyotp($data['email'], $data['otp']));
+            break;
 
-    if($action == 'verifyotp'){
-        $data = $_POST;
-        echo  json_encode( (new otpModel())->verifyotp($data['email'],$data['otp']));
-        
-    }
+        case 'logoutdialog':
+            echo json_encode((new userController())->logoutdialog());
+            break;
 
-    if($action == 'logoutdialog'){
-       
-        echo  json_encode((new userController())->logoutdialog());
-        
-    }
+        case 'logout':
+            echo json_encode((new userModel())->logout());
+            break;
 
-    if($action == 'logout'){
-       
-        echo  json_encode((new userModel())->logout());
-        
-    }
+        case 'editgeneral':
+            // Assuming $data is already extracted from $_POST
+            echo json_encode((new userModel())->updategeneralinfo($data));
+            break;
 
-    if($action == 'editgeneral'){
-        extract($_POST);
-        $data = $_POST;
-        // print_r($data);
-       
-        echo  json_encode((new userModel())->updategeneralinfo($data));
-        
-    }
+        case 'verifyiddialog':
+            echo json_encode((new kycController())->kycforms());
+            break;
 
-    if($action == 'verifyiddialog'){
-       
-        echo  json_encode((new kycController())->kycforms());
-        
-        
-    }
-
-    if($action == 'loaddata'){
-        extract($_POST);
-      
-            extract($_GET);
+        case 'loaddata':
+            // Assuming necessary variables are extracted from $_GET
             $class = new $class();
             $class->$function();
-        
+            break;
+
+        case 'changepassword':
+            echo json_encode((new userModel())->updatepassword($data));
+            break;
+
+        default:
+            // Optionally handle unknown actions
+            echo json_encode(['error' => 'Unknown action']);
+            break;
     }
 }
