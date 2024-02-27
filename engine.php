@@ -62,50 +62,49 @@ $router = new Router([
     new Route(
         '/login',
         function ($context) {
-
             return Viewer::view('app/view/loginauthenticate.php', $context);
         }
     ),
     new Route(
         '/register',
         function ($context) {
-
             return Viewer::view('app/view/registerauth.php', $context);
         }
     ),
     new Route(
         '/verify-email',
         function ($context) {
-
             return Viewer::view('app/view/verify_email.php', $context);
         }
     ),
     new Route(
         '/verify-phone',
         function ($context) {
-
             return Viewer::view('app/view/verify_phone.php', $context);
         }
     ),
     new Route(
         '/otp',
         function ($context) {
-
             return Viewer::view('app/view/enterotp.php', $context);
         }
     ),
     new Route(
         '/email-verified',
         function ($context) {
-
             return Viewer::view('app/view/email_verified.php', $context);
         }
     ),
     new Route(
         '/worker',
         function ($context) {
-
             return Viewer::view('app/view/processor.php', $context);
+        }
+    ),
+    new Route(
+        '/depositform',
+        function ($context) {
+            return Viewer::view('app/view/modals/deposit.php', $context);
         }
     ),
 ]);

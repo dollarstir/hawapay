@@ -58,7 +58,7 @@ $user = (new userModel())->getUserData($_SESSION['account_user']['uid']);
                                             </div>
 
                                             <div class="clearfix"></div>
-                                            <button type="button" data-toggle="modal" data-target="#modal-universal" class="btn btn-primary mb-5 mr-10 btndepo">Deposit</button><button type="button" class="btn btn-secondary mb-5">Withdraw</button><button type="button" data-toggle="modal" data-target="#modal-universal" class="btn btn-primary mb-5 ml-10">Tranfer to Naira</button>
+                                            <button type="button"  class="btn btn-primary mb-5 mr-10 btndepo">Deposit</button><button type="button" class="btn btn-secondary mb-5">Withdraw</button><button type="button" data-toggle="modal" data-target="#modal-universal" class="btn btn-primary mb-5 ml-10">Tranfer to Naira</button>
                                         </div>
                                     </div>
 

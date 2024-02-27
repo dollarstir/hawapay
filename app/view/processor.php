@@ -45,6 +45,7 @@ if(isset($_GET['action'])){
             break;
 
         case 'changepassword':
+
             echo json_encode((new userModel())->updatepassword($data));
             break;
 

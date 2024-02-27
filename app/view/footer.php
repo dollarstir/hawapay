@@ -6,7 +6,7 @@
 							
 		</div>
 
-		<div class="modal " id="deletemodal" data-izimodal-title="Delete dialog" data-izimodal-icon="fa fa-info">
+		<div class="modal " id="deletemodal" data-izimodal-title="Confirm Dialog" data-izimodal-icon="fa fa-info">
 								<div class="deletemodalcontent" style="padding:20px;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
 									
 								</div>
@@ -45,6 +45,18 @@
   
  <!-- modals -->
 
+
+ <!-- universal modal -->
+
+ <div id="eazyModal" class="iziModal">
+
+	 <div class="universalcontent" style="padding:20px;box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
+									
+	</div>
+
+ </div>
+
+<!-- universla Modal  -->
 
 
 

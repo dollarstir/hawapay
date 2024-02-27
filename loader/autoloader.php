@@ -39,6 +39,8 @@ require __DIR__.'/../core/include.php';
         realpath(__DIR__ . '/../app/model') . DIRECTORY_SEPARATOR,
         realpath(__DIR__ . '/../app/view') . DIRECTORY_SEPARATOR,
         realpath(__DIR__ . '/../app/controller') . DIRECTORY_SEPARATOR,
+        realpath(__DIR__ . '/../app/helpers') . DIRECTORY_SEPARATOR,
+        // realpath(__DIR__ . '/../app/middleware') . DIRECTORY_SEPARATOR,
        
     ];
 

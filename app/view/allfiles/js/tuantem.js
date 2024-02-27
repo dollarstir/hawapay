@@ -18,10 +18,10 @@ $(function() {
     // delete modal trigger
     $("#deletemodal").iziModal({
         headerColor: "#ff5b5c",
-        radius: 30,
-        width: 600,
-        top: 100,
-        bottom: 100,
+        radius: 10,
+        width: 300,
+        // top: 100,
+        // bottom: 100,
     });
 
 
@@ -42,6 +42,45 @@ $(function() {
         top: 100,
         bottom: 100,
     });
+
+    function openEazyModal(title, headerColor = "#5a8dee", width = 600, openFullscreen = false,focusInput = false) {
+        $("#eazyModal").iziModal('destroy');
+
+    // Determine device width and adjust modal settings accordingly
+    var windowWidth = $(window).width();
+    var modalWidth = 600; // Default width for larger screens
+    var isFullscreen = openFullscreen; // Default to the passed in value for fullscreen
+
+    // Adjust for smaller screens
+    if(windowWidth < 768) { // Example breakpoint for mobile devices
+        modalWidth = windowWidth * 0.9; // Take up 90% of screen width
+        isFullscreen = true; // Consider always using fullscreen on very small screens
+    }
+
+    $("#eazyModal").iziModal({
+        title: title,
+        headerColor: headerColor,
+        width: modalWidth,
+        top: 100,
+        bottom: 100,
+        radius: 15,
+        padding: 20,
+        transform: 'translateY(-50%)',
+        closeOnEscape: false,
+        openFullscreen: isFullscreen, // Use the dynamically set value
+        focusInput: focusInput,
+        overlay: true,
+        overlayClose: false,
+        onOpening: function(modal){
+            modal.startLoading();
+        },
+        onOpened: function(modal){
+            modal.stopLoading();
+        },
+    });
+    
+        $("#eazyModal").iziModal('open'); // Open the modal
+    }
 
 
 
@@ -229,19 +268,32 @@ $(function() {
     //  deposit btn
 
     $(document).on('click', '.btndepo', function(e){
-        // e.preventDefault();
-        $('#modal-universal').load('app/view/modals/deposit.php');
+        e.preventDefault();
+        openEazyModal("Deposit Funds", "#5a8dee", 300, false, true);
+        $('.universalcontent').load('depositform');
+        
+
+        
     });
 
 
     // chnage password
-    $(document).on('submit', '.chnagepassword', function(e){
+    $(document).on('submit', '.changepassword', function(e){
         e.preventDefault();
         var data = new FormData(this);
         var url ='worker?action=changepassword';
-        myajax(url,data);   
-
+        myajax(url,data);     
     });
+
+    // step wizard 
+    function showStep2() {
+        $('#step2-tab').tab('show');
+      }
+    
+      // Function to return to step 1 (if needed)
+      function showStep1() {
+        $('#step1-tab').tab('show');
+      }
 
 
 
@@ -256,3 +308,6 @@ $(function() {
 
   
 })
+
+
+// Now, progressColor holds the color that should be used for the progress circle

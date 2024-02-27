@@ -30,9 +30,11 @@
 	<link rel="stylesheet" href="app/view/allfiles/css/izimodal.min.css">
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
 	
 	<!-- Crypto Admin skins -->
 	<link rel="stylesheet" href="app/view/allfiles/css/skin_color.css">
+	<link rel="stylesheet" href="app/view/allfiles/css/progress.css">
 
 	<link rel="stylesheet" href="app/view/allfiles/css/mask.css">
 

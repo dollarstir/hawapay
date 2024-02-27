@@ -85,10 +85,6 @@ $emailverified = ($user['email_verified'] == 1) ? '<div class="" style="display:
 
 									</div>
 								</div>
-
-
-
-
 								<hr>
 								<h3 style="padding:20px;font-weight: bold;">General Info</h3>
 								<hr>
@@ -296,13 +292,14 @@ $emailverified = ($user['email_verified'] == 1) ? '<div class="" style="display:
 								<h3 style="padding:20px;font-weight: bold;">Change Password</h3>
 								<hr>
 
-								<form class="form-horizontal  chnagepassword">
+								<form class="form-horizontal  changepassword">
 									<div class="form-group row padding:10px !important;">
 										<div class="col-lg-4  col-sm-12">
 
 											<label class="col-12">Current passwword</label>
 											<div class="col-12">
-												<input type="password" class="form-control h-50 fw-bolder" placeholder="current password">
+												<input type="password" class="form-control h-50 fw-bolder" placeholder="current password" name="old_password">
+												<input type="hidden" name="uid" value="<?= $user['uid']; ?>">
 											</div>
 										</div>
 
@@ -316,7 +313,7 @@ $emailverified = ($user['email_verified'] == 1) ? '<div class="" style="display:
 
 											<label class="col-12">New Password</label>
 											<div class="col-12">
-												<input type="password" class="form-control h-50 fw-bolder" placeholder="New password">
+												<input type="password" class="form-control h-50 fw-bolder" placeholder="New password" name="new_password">
 
 											</div>
 										</div>
@@ -329,7 +326,7 @@ $emailverified = ($user['email_verified'] == 1) ? '<div class="" style="display:
 
 											<label class="col-sm-12">Confirm New Password</label>
 											<div class="col-sm-12">
-												<input type="password" class="form-control h-50 fw-bolder" placeholder="confirm new password">
+												<input type="password" class="form-control h-50 fw-bolder" placeholder="confirm new password" name="confirm_password">
 											</div>
 										</div>
 

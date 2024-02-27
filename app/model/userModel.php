@@ -49,14 +49,16 @@ class userModel {
     public function updatePassword($data) : array{
         $query = new Query();
         $result = self::getUserData($data['uid']);
-        if(Utils::checkIfEmpty($data) === true){
+        // return ['type'=>'error','message'=>'All fields are required '.$data['uid'],'action'=>''];
+    
+        if(Utils::checkIfEmpty($data) != null){
             return ['type'=>'error','message'=>'All fields are required','action'=>''];
         }else if(!Utils::isPasswordMatch($data['new_password'], $data['confirm_password'])){
             return ['type'=>'error','message'=>'New Password and Confirm Password do not match','action'=>''];
         }
         else{
             if (password_verify($data['old_password'], $result['password'])) {
-                $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+                $data['password'] = password_hash($data['new_password'], PASSWORD_DEFAULT);
                 $sql = "UPDATE user_accounts SET password = ? WHERE uid = ?";
                 if ($query->update($sql, [$data['password'], $data['uid']])) {
                     return ['type' => 'success', 'message' => 'Password Updated Successfully', 'action' => 'reload'];
